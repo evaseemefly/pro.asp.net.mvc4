@@ -201,6 +201,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Infrastructure\CustomRedirectrResult.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RedirectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -273,6 +274,7 @@
     <Content Include="Views\Derived\Index.cshtml" />
     <Content Include="Views\Basic\Index.cshtml" />
     <Content Include="Views\Derived\ShowDate.cshtml" />
+    <Content Include="Views\Redirect\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
