@@ -1,0 +1,31 @@
+﻿@using ajax.Models
+@model string
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "GetPeople";
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        UpdateTargetId = "tableBody"
+    };
+}
+ <table>
+ <thead>
+    <tr><th> First </th>
+    <th> Last </th>
+    <th> Role </th>
+    </tr>
+ </thead>
+<tbody id = "tableBody">
+    @Html.Action("GetPeopleData", new { selectedRole = Model })
+</tbody> 
+ </table>
+@using (Ajax.BeginForm("GetPeopleData", ajaxOpts))
+{
+     <div> 
+            @Html.DropDownList("selectedRole", new SelectList(new[] { "All" }.Concat(Enum.GetNames(typeof(Role)))))
+    <button type = "submit"> Submit </button>
+    </div>
+}
+
+ 
+
