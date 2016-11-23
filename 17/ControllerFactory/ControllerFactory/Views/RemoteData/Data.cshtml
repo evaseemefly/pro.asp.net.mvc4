@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Data";
+}
+<script type="text/javascript">
+    function func() {
+        $.ajax({
+            url: "DataAsync",
+            contentType: 'application/json;charset=utf-8',//注意此处必须注明为json格式，否则后台控制器无法通过Model的方式接收
+            async: true,
+            type: 'POST',
+            success: function (data) {
+                if ("ok" == data) {
+                    alert("提交成功");
+                }
+                else {
+                    alert("提交失败");
+                }
+            },
+            beforeSend: function () {
+                alert("准备提交");
+            }
+
+        })
+    }
+</script>
+
+<button onclick="func()">提交</button>
+@*Data:@Model*@
+
